@@ -45,5 +45,7 @@ function isExternal(path) {
 </script>
 
 <style lang="scss" scoped>
-
+el-menu-item :hover{
+  color: aquamarine;
+}
 </style>

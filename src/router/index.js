@@ -4,6 +4,7 @@ import {basicRoutes} from "./basic"
 import {constRoutes} from "./const"
 import {useUserStore} from '../store/user'
 import {getToken} from '../utils/storage'
+import { useLayoutStore } from '../store/layout';
 
 //从.env文件中读取配置基本路径
 const base=import.meta.env.BASE_URL
@@ -38,6 +39,11 @@ router.beforeEach(async (to) => {
       return to
     }
   })
+
+router.afterEach((to)=>{
+  document.title=to.meta.title||pageTitle;
+  useLayoutStore()['accessRecord'](to)
+})
 
 export default router;
 
