@@ -41,7 +41,7 @@ export const useUserStore = defineStore("user", {
       const accessedRoutes=this.roles.includes("admin")
         ?asyncRoutes||[]
         :filterAsyncRoutes(asyncRoutes,this.roles);
-        console.log(accessedRoutes);
+        // console.log(accessedRoutes);
       //将动态生成的可以访问的路由加入 到 vue-router中
       accessedRoutes.forEach((route)=>router.addRoute(route));
       //

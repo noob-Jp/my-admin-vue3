@@ -26,7 +26,7 @@ import  {removeToken}  from '../../../utils/storage.js';
 const {unfoldSidebar,toggleSideBar,breadcrumbList}=toRefs(useLayoutStore());
 
 const BreadcrumbList=breadcrumbList.value;
-console.log(BreadcrumbList);
+// console.log(BreadcrumbList);
 // TEMP:头像下拉菜单项
 const dropdownItems = readonly([
   { title: '个人中心', path: '/profile' },

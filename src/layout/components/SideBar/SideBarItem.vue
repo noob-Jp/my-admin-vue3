@@ -26,14 +26,14 @@ export default {
   name: "SideBarItem",
   props: { item: { type: Object, required: true } },
   setup(props) {
-    console.log(props.item);
+    // console.log(props.item);
     const menu = props.item;
     const router = useRouter();
     const realPath =
       !isExternal(menu.path) && menu.name
         ? router.resolve({ name: menu.name }).path
         : menu.path
-    console.log(realPath);
+    // console.log(realPath);
     return { realPath }
   }
 

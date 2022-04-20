@@ -6,6 +6,7 @@
         <div class="main-container">
             <header>
                 <NavBar></NavBar>
+                <TabBar></TabBar>
             </header>
             <AppMain></AppMain>
             <!-- ↑ 内容主体展示区域 ↑  -->
@@ -19,7 +20,7 @@
 import SideBar from './components/SideBar/index.vue'
 import NavBar from './components/NavBar/index.vue'
 import AppMain from './components/AppMain/index.vue'
-
+import TabBar from './components/TabBar/index.vue'
 import { useLayoutStore } from '../store/layout';
 
 import {toRefs} from 'vue'
