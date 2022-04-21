@@ -18,7 +18,11 @@ export const useLayoutStore = defineStore("layout", {
     //面包屑 数据数组
     breadcrumbList:[],
     //记录访问过的页面数组
-    visitedViews:[]
+    visitedViews:[],
+    //控制设置面板显示与隐藏
+    showSettings:false,
+    //是否显示左侧菜单栏logo
+    showLogo:getSetting("showLogo",true)
   }),
   getters: {
     // 响应式：如果是移动端，则不显示折叠后的sidebar
@@ -66,6 +70,22 @@ export const useLayoutStore = defineStore("layout", {
           fullPath:view.fullPath,
           timeStamp:Date.now()
         })
+      }
+    },
+    //设置面板隐藏显示切换
+    toggleSettings(bool){
+      if(bool!==undefined){
+        this.showSettings=bool;
+      }else{
+        this.showSettings=!this.showSettings;
+      }
+    },
+    //设置左侧Logo隐藏显示的切换
+    changeShowLogo(bool){
+      if(bool!==undefined){
+        this.showLogo=bool;
+      }else{
+        this.showLogo=!this.showLogo;
       }
     }
   },

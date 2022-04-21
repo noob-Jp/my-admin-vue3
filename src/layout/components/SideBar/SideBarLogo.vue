@@ -1,5 +1,5 @@
 <template>
-    <div style="text-align: center;" v-show="isCollapse">
+    <div style="text-align: center;" v-show="showLogo">
         <router-link
         :to="toPath"
         >
@@ -12,7 +12,7 @@
 <script setup>
 import {toRefs} from "vue";
 import { useLayoutStore } from "../../../store/layout"
-const  {unfoldSidebar} =toRefs(useLayoutStore())
+const  {unfoldSidebar,showLogo} =toRefs(useLayoutStore())
 defineProps({
     toPath:{default:"/"},
     isCollapse:{default:true},

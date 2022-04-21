@@ -4,7 +4,10 @@
     <Breadcrumb :list="BreadcrumbList"></Breadcrumb>
     <div class="right-menu-area">
       <AvatarMenu :avatar="DioAvatar" :nickname="'管理员'" :items="dropdownItems"></AvatarMenu>
+      <app-icon  class="setting-icon" size="20" icon="el-icon-setting" @click="toggleSettings()"></app-icon>
+
     </div>
+
   </div>
 </template>
 <!-- 顶部横栏：左侧控制侧边栏收缩的按钮，右侧的头像下拉框 -->
@@ -21,11 +24,11 @@ import Breadcrumb from './Breadcrumb.vue'
 //layout仓库的引入
 import { useLayoutStore } from '../../../store/layout';
 //移除token工具的引入
-import  {removeToken}  from '../../../utils/storage.js';
+import { removeToken } from '../../../utils/storage.js';
 //从layout仓库中导出控制是否展开侧边菜单栏的数据，以及侧边栏是否展开事件的
-const {unfoldSidebar,toggleSideBar,breadcrumbList}=toRefs(useLayoutStore());
+const { unfoldSidebar, toggleSideBar, breadcrumbList,toggleSettings } = toRefs(useLayoutStore());
 
-const BreadcrumbList=breadcrumbList.value;
+const BreadcrumbList = breadcrumbList.value;
 // console.log(BreadcrumbList);
 // TEMP:头像下拉菜单项
 const dropdownItems = readonly([
@@ -49,8 +52,6 @@ const dropdownItems = readonly([
 </script>
     
 <style lang="scss"  scoped>
-
-
 .navbar {
   position: relative;
   display: flex;
@@ -67,5 +68,13 @@ const dropdownItems = readonly([
   display: flex;
   align-items: center;
   height: 100%;
+}
+.setting-icon{
+  padding: 15px 10px;
+  cursor: pointer;
+  display: inline-block;
+  &:hover{
+    background-color: $hover-background-color;
+  }
 }
 </style>
