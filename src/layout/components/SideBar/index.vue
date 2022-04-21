@@ -1,5 +1,6 @@
 <template>
   <aside class="sidebar-container" :style="{ width: sidebarWidth }">
+    <SideBarLogo></SideBarLogo>
     <el-menu 
     :collapse-transition="false"
     active-text-color="#35A7FF" 
@@ -16,6 +17,8 @@
 
 <script setup>
 import { reactive, ref, toRefs, watch } from 'vue'
+//引入Logo组件
+import SideBarLogo from './SideBarLogo.vue';
 //引入侧边栏内容组件
 import SideBarItem from './SideBarItem.vue'
 //引入user仓库
@@ -81,4 +84,5 @@ const handleClose = (key, keyPath) => {
   }
 
 }
+
 </style>
