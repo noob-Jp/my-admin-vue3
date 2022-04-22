@@ -1,5 +1,5 @@
 <template>
-    <div class="tabBar">
+    <div class="tabBar" v-show="showTabBar">
         <el-scrollbar>
             <div class="item-list" v-for="item in visitedViews" :key="item.timeStamp">
                 <TabBarItem  :TabItem="item"></TabBarItem>
@@ -13,7 +13,7 @@ import { toRefs, computed } from 'vue';
 import { useLayoutStore } from '../../../store/layout';
 import TabBarItem from '../TabBar/TabBarItem.vue'
 
-const { visitedViews, sUnfoldWidth } = toRefs(useLayoutStore());
+const { visitedViews, sUnfoldWidth,showTabBar } = toRefs(useLayoutStore());
 </script>
     
 <style lang="scss"  scoped>

@@ -8,8 +8,8 @@
     :collapse="!unfoldSidebar"
     :default-active="$route.path"
     text-color="#dcdcdc" 
-    @open="handleOpen" 
-    @close="handleClose">
+    unique-opened="uniqueOpen"
+   >
       <SideBarItem v-for="item in menus" :key="menus.path" :item="item"></SideBarItem>
     </el-menu>
   </aside>
@@ -34,7 +34,7 @@ const menus = reactive([]);
 menus.push(...createMenuFromAddRoutes(addRoutes.value))
 
 //从仓库中导出控制侧边栏是否展开的数据、以及控制侧边栏宽度的数据
-const { unfoldSidebar, sidebarWidth } = toRefs(useLayoutStore())
+const { unfoldSidebar, sidebarWidth ,uniqueOpen} = toRefs(useLayoutStore())
 //监听生成的路由的变化
 watch(addRoutes, (newRoutes) => {
   menus.length = 0
