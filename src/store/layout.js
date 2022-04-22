@@ -45,7 +45,7 @@ export const useLayoutStore = defineStore("layout", {
     //侧边栏切换
     toggleSideBar(bool) {
       if (bool !== undefined) {
-        this.unfoldSideBar = bool;
+        this.unfoldSidebar = bool;
       } else {
         this.unfoldSidebar = !this.unfoldSidebar;
       }

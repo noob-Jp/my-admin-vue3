@@ -26,7 +26,7 @@ import { useLayoutStore } from '../../../store/layout';
 //移除token工具的引入
 import { removeToken } from '../../../utils/storage.js';
 //从layout仓库中导出控制是否展开侧边菜单栏的数据，以及侧边栏是否展开事件的
-const { unfoldSidebar, toggleSideBar, breadcrumbList,toggleSettings } = toRefs(useLayoutStore());
+const { unfoldSidebar, toggleSideBar, breadcrumbList,toggleSettings} = toRefs(useLayoutStore());
 
 const BreadcrumbList = breadcrumbList.value;
 // console.log(BreadcrumbList);

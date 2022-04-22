@@ -72,6 +72,7 @@ export default {
   height: 100vh;
   background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
   padding: 0 1rem;
+  overflow: hidden;
 }
 
 .login-container {
@@ -100,7 +101,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 450px;
+  width: 30%;
   height: 400px;
   border-radius: 1rem;
   box-shadow: 4px 10px 16px rgb(36 37 38 / 13%);
@@ -130,5 +131,15 @@ $input-height: 44px;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 16px;
+}
+
+@media screen and (max-width:$sm-width){
+  .login-left{
+    display: none;
+  }
+  .login-right{
+    width:100%;
+  }
+
 }
 </style>

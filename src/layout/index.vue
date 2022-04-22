@@ -1,7 +1,11 @@
 <template>
     <div class="app-wrapper">
         <SideBar></SideBar>
-        <div ></div>
+        <div 
+        class="mask-zIndex99"
+        v-if="isMobile&&unfoldSidebar"
+        @click.self.stop="toggleSideBar(false)"
+        ></div>
         <!-- ↑ 移动端模式下展开侧边栏所出现的遮罩层 ↑  -->
         <div class="main-container">
             <header>
@@ -25,7 +29,8 @@ import Settings from './components/Settings/index.vue'
 import { useLayoutStore } from '../store/layout';
 
 import {toRefs} from 'vue'
-const {mainPaddingLeft} =toRefs(useLayoutStore())
+const {mainPaddingLeft,isMobile,unfoldSidebar,toggleSideBar} =toRefs(useLayoutStore())
+
 </script>
     
 <style lang="scss" scoped>
@@ -40,5 +45,11 @@ const {mainPaddingLeft} =toRefs(useLayoutStore())
     position: relative;
     flex-grow: 1; // 撑满页面右边的主体区域
     padding-left: v-bind('mainPaddingLeft');
+}
+
+
+
+@media screen and (max-width:$sm-width){
+    
 }
 </style>

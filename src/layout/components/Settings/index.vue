@@ -3,7 +3,7 @@
         <el-drawer
         v-model="showSettings"
         title="项目配置"
-        size="20%"
+        :size="`${isMobile}?'70%'':'20%'`"
         >
         <slot>
             <div >
@@ -40,9 +40,10 @@
 </template>
     
 <script setup>
-import { toRefs } from 'vue';
+import { ref,toRefs,watch } from 'vue';
 import { useLayoutStore } from '../../../store/layout';
-const {showSettings,showLogo,changeShowLogo,uniqueOpen,changeUniqueOpen,showTabBar,changeShowTabBar}=toRefs(useLayoutStore());
+const {showSettings,showLogo,changeShowLogo,uniqueOpen,changeUniqueOpen,showTabBar,changeShowTabBar,isMobile}=toRefs(useLayoutStore());
+
 
 </script>
     
@@ -52,7 +53,7 @@ const {showSettings,showLogo,changeShowLogo,uniqueOpen,changeUniqueOpen,showTabB
     flex-direction: row;
     justify-content: space-between;
     height: 32px;
-    padding: 25px;
+    padding: 20px;
 }
 
 </style>
