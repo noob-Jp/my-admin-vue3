@@ -3,11 +3,11 @@
         <el-drawer
         v-model="showSettings"
         title="项目配置"
-        :size="`${isMobile}?'70%'':'20%'`"
+        size=""
         >
         <slot>
             <div >
-                <el-divider><span style="color: #303133;font-size: 16px;font-weight: bold;">界面显示</span></el-divider>
+                <el-divider><span style="color: #303133;font-size: 14px;font-weight: bold;">界面显示</span></el-divider>
                 <div class="page-show">
                     <span>侧边栏Logo</span>
                     <el-switch
@@ -44,7 +44,9 @@ import { ref,toRefs,watch } from 'vue';
 import { useLayoutStore } from '../../../store/layout';
 const {showSettings,showLogo,changeShowLogo,uniqueOpen,changeUniqueOpen,showTabBar,changeShowTabBar,isMobile}=toRefs(useLayoutStore());
 
-
+watch(isMobile,(newValue,oldValue)=>{
+    alert(123123);
+})
 </script>
     
 <style lang="scss" scoped>

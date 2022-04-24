@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div style="overflow-x: hidden;">
         <el-row :gutter="10">
-            <el-col :xs="12" :xl="12">
+            <el-col :xs="24" :xl="12">
                 <div>
                     <el-card class="card-top" shadow="hover" >
                         <div class="profile_tx">
@@ -20,7 +20,7 @@
                             <el-tag v-for="item in myLabel" type="success" style="margin: 5px;">{{item}}</el-tag>
                         </div>
                         <el-divider >技能</el-divider>
-                        <div>
+                        <div style="padding-left:10%;">
                             <ul>
                                 <li v-for="item in myIntroduce">{{item}}</li>
                             </ul>
@@ -29,8 +29,8 @@
                      
                 </div>
             </el-col>
-            <el-col :xs="12" :xl="12" style="margin-top:10px;height:600px">
-                <el-card shadow="hover"> 
+            <el-col :xs="24" :xl="12" style="margin-top:10px;height:600px">
+                <el-card class="card-bottom" shadow="hover"> 
                     <el-tabs type="border-card">
                         <el-tab-pane label="博客">
                             <ul class="profile_blog">
@@ -38,7 +38,7 @@
                                 <li>
                                     <img :src="item.logo"/>
                                     <div>
-                                        <h3>{{item.title}}</h3>
+                                        <h4>{{item.title}}</h4>
                                         <div>{{item.desc}}述</div>
                                     </div>
                                 </li>
@@ -79,7 +79,7 @@ import addrIcon from '../../../icons/addr-icon.svg'
 import emailIcon from '../../../icons/email-icon.svg'
 import schoolIcon from '../../../icons/school-icon.svg'
 
-import csdnLogo from '../../../assets/csdn-logo.png'
+import csdnLogo from '../../../assets/csdn-logo.svg'
 import jueJinLogo from '../../../assets/juejin-logo.svg'
 import niuKeLogo from '../../../assets/niuKe-logo.svg'
 
@@ -172,6 +172,7 @@ const myProject=reactive([
 .card-top{
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .profile_tx {
@@ -191,10 +192,12 @@ const myProject=reactive([
         display:flex;
         flex-direction:row;
         border-bottom:1px solid var(--el-border-color);
-        padding-bottom:5px;
+        align-items: center;
+        box-sizing: content-box;
+        height: 50px;
+        padding: 20px;
         img{
-            width:160px;
-            height:80px;
+            width:15%;
             margin-right:30px;
         }
     }
@@ -209,7 +212,7 @@ const myProject=reactive([
         img{
             width:30px;
             height:30px;
-            margin-right:30px;
+            margin-right:10px;
         }
     }
 }
@@ -223,9 +226,8 @@ const myProject=reactive([
         img{
             width:30px;
             height:30px;
-            margin-right:30px;
+            margin-right:10px;
         }
     }
 }
-
 </style>
