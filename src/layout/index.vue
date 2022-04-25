@@ -39,12 +39,14 @@ const {mainPaddingLeft,isMobile,unfoldSidebar,toggleSideBar} =toRefs(useLayoutSt
     position: relative;
     overflow: auto;
     display: flex;
+
 }
 
 .main-container {
     position: relative;
     flex-grow: 1; // 撑满页面右边的主体区域
     padding-left: v-bind('mainPaddingLeft');
+    overflow-x: hidden;
 }
 
 
