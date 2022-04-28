@@ -5,6 +5,9 @@ import {constRoutes} from "./const"
 import {useUserStore} from '../store/user'
 import {getToken} from '../utils/storage'
 import { useLayoutStore } from '../store/layout';
+//导入nprogress
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 //从.env文件中读取配置基本路径
 const base=import.meta.env.BASE_URL
@@ -25,6 +28,7 @@ const router=createRouter({
 })
 
 router.beforeEach(async (to) => {
+    NProgress.start();
     // 根据是否有 token 判断用户是否登录
     const token = getToken()
     // 如果[未登录]且要访问[不在]公共路径集合里的路径时，跳转到登录页面并记录之前的页面用于重新访问
@@ -41,6 +45,7 @@ router.beforeEach(async (to) => {
   })
 
 router.afterEach((to)=>{
+  NProgress.done();
   document.title=to.meta.title||pageTitle;
   useLayoutStore()['accessRecord'](to)
 })
