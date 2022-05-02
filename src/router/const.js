@@ -60,5 +60,25 @@ export const constRoutes = [
       meta: { title: "个人中心" },
     },
   }),
+  //组件示例
+  {
+    path: "/components",
+    component: LAYOUT,
+    meta: { title: '组件示例', icon: 'el-icon-copy-document' },
+    children: [
+      {
+        path: "/draggable",
+        name: "Draggable",
+        component: () => import("../views/components/draggable/index.vue"),
+        meta: { title: "拖拽组件", icon: "" },
+      },
+      {
+        path: "/countAnimation",
+        name: "CountAnimation",
+        component: () => import("../views/components/count-animation/index.vue"),
+        meta: { title: "数字动画", icon: "" },
+      },
+    ],
+  },
   
 ];
