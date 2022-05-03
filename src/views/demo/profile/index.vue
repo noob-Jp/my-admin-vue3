@@ -164,6 +164,12 @@ const myProject=reactive([
         title:"微信原生+egg.js后台写的树洞小程序",
         desc:""
     },
+    {
+        link:"https://github.com/noob-Jp/react-cms-manage",
+        logo:githubIcon,
+        title:"react+AntDesign 后台文章管理系统",
+        desc:""
+    },
 
 ])
 </script>

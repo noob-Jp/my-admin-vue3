@@ -114,8 +114,7 @@ const log = (evt) => {
     
 <style lang="scss" scoped>
 .drag {
-    height: calc(100vh - 90px);
-    overflow: hidden;
+    // height: calc(100vh - 90px);
 }
 
 .card-header {
