@@ -1,4 +1,5 @@
 # my-admin-vue3
+线上预览地址： [vue后台管理](http://123.57.209.6:8136/#/login?redirect=/dashboard)
 
 本项目是我第一次写vue3，vue2已经学了很长时间，早就想开始接触vue3，通过b站和github上项目的介绍我了解到好多成熟的vue3的后台管理的项目，并且也star了好多，但是光
 

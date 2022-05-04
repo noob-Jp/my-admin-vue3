@@ -18,6 +18,7 @@
     "pinia": "^2.0.13",
     "vite-plugin-mock": "^2.9.6",
     "vue": "^3.2.25",
+    "vue-countup-v3": "^1.0.13",
     "vue-router": "^4.0.14",
     "vuedraggable": "^4.1.0"
   },
